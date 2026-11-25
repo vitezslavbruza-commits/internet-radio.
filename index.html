@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101719">
+  <meta name="description" content="Internetové rádio – české i zahraniční stanice na jednom místě.">
+  <title>RadioWave – Internetové rádio</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="RadioWave – domů"><span class="brand-mark">◖</span><span>radio<span class="accent">wave</span></span></a>
+      <div class="top-actions"><span class="live-dot"></span><span class="small-muted">ONLINE RADIO</span></div>
+    </header>
+
+    <main>
+      <section class="player-card">
+        <div class="player-copy">
+          <div class="eyebrow">PRÁVĚ HRAJE</div>
+          <h1 id="now-title">Vyber si stanici</h1>
+          <p id="now-country">Internetové rádio na jednom místě</p>
+          <div class="player-controls">
+            <button id="play-btn" class="play-button" aria-label="Přehrát" disabled>▶</button>
+            <button id="stop-btn" class="icon-button" aria-label="Zastavit" disabled>■</button>
+            <div class="volume-wrap"><span>HLASITOST</span><input id="volume" type="range" min="0" max="1" step="0.01" value="0.8"></div>
+          </div>
+          <div id="player-status" class="status">Připraveno k přehrávání</div>
+        </div>
+        <div class="sound-art" aria-hidden="true"><div class="sound-ring ring-one"></div><div class="sound-ring ring-two"></div><div class="sound-core">♫</div></div>
+        <audio id="audio" preload="none"></audio>
+      </section>
+
+      <section class="content-section">
+        <div class="section-heading">
+          <div><div class="eyebrow">OBJE VUJ HUDBU</div><h2>Rozhlasové stanice</h2></div>
+          <div class="search-box"><span>⌕</span><input id="search" type="search" placeholder="Hledat stanici…" autocomplete="off"></div>
+        </div>
+        <div class="filters" role="group" aria-label="Filtr stanic">
+          <button class="filter active" data-filter="all">Všechny</button>
+          <button class="filter" data-filter="czech">České</button>
+          <button class="filter" data-filter="world">Zahraniční</button>
+          <button class="filter" data-filter="favorites">♥ Oblíbené</button>
+        </div>
+        <div id="station-list" class="station-list"><div class="loading">Načítám stanice…</div></div>
+        <p class="source-note">Seznam stanic se načítá z veřejného katalogu Radio Browser. Dostupnost streamů se může měnit.</p>
+      </section>
+    </main>
+    <footer>RADIOWAVE <span>•</span> Poslouchej, co tě baví.</footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

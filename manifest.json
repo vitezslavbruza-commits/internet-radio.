@@ -1,0 +1,9 @@
+{
+  "name": "RadioWave – Internetové rádio",
+  "short_name": "RadioWave",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0c1214",
+  "theme_color": "#101719",
+  "icons": []
+}
